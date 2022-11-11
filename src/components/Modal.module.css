@@ -1,0 +1,79 @@
+.darkBg{
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 0;
+}
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.modal{
+    width: 250px;
+    height: 170px;
+    background: white;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    border-radius: 15px;
+
+}
+
+.headerModal h1{
+    color: #2c3e50;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.modalInput{
+    border-radius: 10px;
+    height: 28px;
+    color: #2c3e50;
+}
+
+
+
+.addBtn {
+    all: unset;
+    color: #2c3e50;
+    font-weight: 500;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    padding: 8px 25px;
+    background-color: rgb(47, 252, 24);
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    
+}
+
+.addBtn:hover {
+    transform: translateY(-5px);
+}
+
+.dismissBtn {
+    all: unset;
+    color: #2c3e50;
+    font-weight: 500;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    padding: 8px 13px;
+    background-color:  #ff3e4e;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.dismissBtn:hover {
+    transform: translateY(-5px);
+}

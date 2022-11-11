@@ -2,15 +2,25 @@ import React , { useRef, useState } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import Task from './Task';
+
+//icons
+import { UilPlusCircle } from '@iconscout/react-unicons'
+
+//Components
+import Modal from './Modal';
+import Tasks from './Tasks';
 
 
 const Home = () => {
 
     const [time , setTime] = useState(0)
     const [running , setRunning] = useState(true);
-    const increment = useRef(null)
+    const [isOpen , setIsOpne] = useState(false);
     const [data , setData] = useState([])
+    const [value , setValue] = useState("");
+    const [project , setProject] = useState([])
+    const increment = useRef(null)
+
     
 
     const clickHandler = (event) => {
@@ -27,10 +37,14 @@ const Home = () => {
             setData([...data ,{ time:timeFormatting()}])
             setTime(0);
             clearInterval(increment.current)
-            console.log('stop')
+            if(!project.includes(value.toLowerCase())){
+                setProject([...project , value.toLowerCase()])
+            }
             console.log(data)
         }
     }
+
+
 
     const timeFormatting = () => {
         const getSec = `0${time % 60}`.slice(-2);
@@ -43,21 +57,26 @@ const Home = () => {
     }
 
     return (
+        <>
         <div>
             <div style={{display:"flex" , justifyContent:"space-between"}}>
                 <div>
-                    <input />
+                    <input  />
+                    <button onClick={() => setIsOpne(true)}>
+                        <UilPlusCircle/>
+                    </button>
                 </div>
                 <div style={{display:"flex" , justifyContent:"space-between"}}>
                     <div>
-                        <img src="" alt="" />
+                        <img src="" alt="add" />
                     </div>
                     <div>
                         {timeFormatting()}
+                        
                     </div>
                         {
                             running ?
-                            <button name='start' onClick={clickHandler}>Start</button> :
+                            <button  name='start' onClick={clickHandler}>Start</button> :
                             <button name='stop' onClick={clickHandler}>Stop</button>
 
                         }
@@ -65,10 +84,14 @@ const Home = () => {
             </div>
             <div>
                   {
-                    data.map(item => <Task key={uuidv4()} time={item.time} />)
+                    project.map(item => <Tasks key={uuidv4()} projectName={item} data={data}  />)
                   }
             </div>
         </div>
+        {
+            isOpen && <Modal setIsOpen={setIsOpne} setProject={setProject} project={project} value={value} setValue={setValue} />
+        }
+        </>
     );
 };
 

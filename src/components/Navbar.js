@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Navbar = () => {
     return (
         <div style={{padding:"10px" , display:"flex", justifyContent:"space-between"}}>
@@ -10,6 +11,7 @@ const Navbar = () => {
             <ul style={{display:"flex" ,justifyContent:"space-between" , listStyle:"none" ,width:"300px"}}>
                 <li>Hamburger</li>
                 <li>Logo</li>
+
             </ul>
         </div>
     );
