@@ -79,3 +79,17 @@
     background-color:rgb(23, 170, 211);
 }
 
+.stopBtn {
+    all: unset;
+    background-color: #ff3e4e;
+    margin-bottom: 1px;
+    padding: 8px 28px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.stopBtn:hover {
+    background-color: #d63542;
+}

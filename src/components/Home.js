@@ -69,9 +69,6 @@ const Home = () => {
                     </button>
                 </div>
                 <div className={styles.entryTime}>
-                    {/* <div>
-                        <img src="" alt="add" />
-                    </div> */}
                     <div className={styles.time}>
                         {timeFormatting()}
                     </div>
