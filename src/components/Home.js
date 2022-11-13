@@ -8,7 +8,10 @@ import { UilPlusCircle } from '@iconscout/react-unicons'
 
 //Components
 import Modal from './Modal';
-import Tasks from './Tasks';
+import Projects from './Projects';
+
+//Styles
+import styles from "./Home.module.css";
 
 
 const Home = () => {
@@ -16,30 +19,29 @@ const Home = () => {
     const [time , setTime] = useState(0)
     const [running , setRunning] = useState(true);
     const [isOpen , setIsOpne] = useState(false);
-    const [data , setData] = useState([])
-    const [value , setValue] = useState("");
-    const [project , setProject] = useState([])
-    const increment = useRef(null)
+    const [name , setName] = useState("");
+    const [task , setTask] = useState("");
+    const [data , setData] = useState([]);
+    const increment = useRef(null);
 
     
 
     const clickHandler = (event) => {
         if(event.target.name === "start"){
-
-            increment.current = setInterval(() => {
-                 setTime((prevState) => prevState + 1)
-            } , 1000)
-            setRunning(false);
-            console.log('start')
+                increment.current = setInterval(() => {
+                    setTime((prevState) => prevState + 1)
+               } , 1000)
+               setRunning(false);
+               console.log('start')
+            
+           
         } else if (event.target.name === "stop") {
-
             setRunning(true);
-            setData([...data ,{ time:timeFormatting()}])
-            setTime(0);
             clearInterval(increment.current)
-            if(!project.includes(value.toLowerCase())){
-                setProject([...project , value.toLowerCase()])
-            }
+            setTime(0);
+            setData([...data , {time:timeFormatting() , name:name , task:task }])   
+            setTask("") 
+            
             console.log(data)
         }
     }
@@ -58,38 +60,42 @@ const Home = () => {
 
     return (
         <>
-        <div>
-            <div style={{display:"flex" , justifyContent:"space-between"}}>
-                <div>
-                    <input  />
+        <div className={styles.container}>
+            <div className={styles.entryData} >
+                <div className={styles.entryproject}>
+                    <input value={task} placeholder="What are you working on?" onChange={event => setTask(event.target.value)} />
                     <button onClick={() => setIsOpne(true)}>
-                        <UilPlusCircle/>
+                        <UilPlusCircle/> <span>Project</span>
                     </button>
                 </div>
-                <div style={{display:"flex" , justifyContent:"space-between"}}>
-                    <div>
+                <div className={styles.entryTime}>
+                    {/* <div>
                         <img src="" alt="add" />
-                    </div>
-                    <div>
+                    </div> */}
+                    <div className={styles.time}>
                         {timeFormatting()}
+                    </div>
+                        <div className={styles.buttons}>
                         
-                    </div>
-                        {
-                            running ?
-                            <button  name='start' onClick={clickHandler}>Start</button> :
-                            <button name='stop' onClick={clickHandler}>Stop</button>
+                            {
+                                running ?
+                                <button className={styles.startBtn} name='start' onClick={clickHandler}>Start</button> :
+                                <button className={styles.stopBtn} name='stop' onClick={clickHandler}>Stop</button>
 
-                        }
-                    </div>
+                            }
+                        </div>
+
+                </div>
             </div>
             <div>
-                  {
-                    project.map(item => <Tasks key={uuidv4()} projectName={item} data={data}  />)
-                  }
+                {
+                    data.map(item => <Projects key={uuidv4()} data={item} />)
+                }
             </div>
+                  
         </div>
         {
-            isOpen && <Modal setIsOpen={setIsOpne} setProject={setProject} project={project} value={value} setValue={setValue} />
+            isOpen && <Modal setIsOpen={setIsOpne} setName={setName} />
         }
         </>
     );

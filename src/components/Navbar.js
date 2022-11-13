@@ -1,18 +1,23 @@
 import React from 'react';
 
+//Style
+import styles from './Navbar.module.css'
 
 const Navbar = () => {
     return (
-        <div style={{padding:"10px" , display:"flex", justifyContent:"space-between"}}>
-            <ul style={{display:"flex" ,justifyContent:"space-between" , listStyle:"none" ,width:"300px"}}>
-                <li>name</li>
-                <li>avatar</li>
-            </ul>
-            <ul style={{display:"flex" ,justifyContent:"space-between" , listStyle:"none" ,width:"300px"}}>
-                <li>Hamburger</li>
-                <li>Logo</li>
+        <div  >
+            <div className={styles.container}>
+                <ul className={styles.rgNav} >
+                    <li>name</li>
+                    <li>avatar</li>
+                </ul>
+                <ul className={styles.lfNav}>
+                    <li>Hamburger</li>
+                    <li>Logo</li>
 
-            </ul>
+                </ul>
+                
+            </div>
         </div>
     );
 };

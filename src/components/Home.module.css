@@ -1,0 +1,81 @@
+.container {
+    padding: 30px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.entryData {
+    border: 2px solid rgb(237, 237, 237);
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    padding: 15px 10px;
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 33px;
+} 
+
+.entryproject{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+.entryproject button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.entryproject button span {
+    margin-top: 4px;
+    margin-left: 7px;
+    font-weight: 600;
+}
+
+.entryproject input {
+    border: none;
+    height: 30px;
+    width: 100%;
+    
+}
+
+.entryproject input:hover {
+    border: 1px solid rgb(237, 237, 237);
+}
+
+.entryTime {
+    display:flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.time {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.buttons {
+}
+
+.startBtn {
+    all: unset;
+    background-color: rgb(24, 203, 252);
+    margin-bottom: 1px;
+    padding: 8px 28px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.startBtn:hover {
+    background-color:rgb(23, 170, 211);
+}
+

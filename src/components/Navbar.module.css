@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(237, 237, 237);
+    background-color: rgb(250, 250, 250);
+}
+
+.rgNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lfNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
