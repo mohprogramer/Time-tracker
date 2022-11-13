@@ -3,6 +3,9 @@ import React from 'react';
 //Style
 import styles from './Navbar.module.css'
 
+//img
+import avatar from '../assets/avatar.png'
+
 const Navbar = () => {
     return (
         <div className={styles.container} >
@@ -13,7 +16,7 @@ const Navbar = () => {
                 </ul>
                 <ul className={styles.lfNav}>
                     <li>name</li>
-                    <li><img src='../assets/img.jpg' alt="avatar" /></li>
+                    <li className={styles.img} ><img src={avatar} alt="avatar" /></li>
                 </ul>
             </div>
         </div>
