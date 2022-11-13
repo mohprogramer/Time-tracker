@@ -5,18 +5,16 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
     return (
-        <div  >
-            <div className={styles.container}>
+        <div className={styles.container} >
+            <div className={styles.navContainer}>
                 <ul className={styles.rgNav} >
-                    <li>name</li>
-                    <li>avatar</li>
+                    <li>Hamburger</li>
+                    <li>Logo</li>           
                 </ul>
                 <ul className={styles.lfNav}>
-                    <li>Hamburger</li>
-                    <li>Logo</li>
-
+                    <li>name</li>
+                    <li><img src='../assets/img.jpg' alt="avatar" /></li>
                 </ul>
-                
             </div>
         </div>
     );
