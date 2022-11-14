@@ -88,9 +88,9 @@ const Home = () => {
 
                 </div>
             </div>
-            <div>
+            <div className={data.length && styles.projectContainer}>
                 {
-                    data.map(item => <Projects key={uuidv4()} data={item} />)
+                    data.map(item => <Projects key={uuidv4()} data={item}  />)
                 }
             </div>
                   

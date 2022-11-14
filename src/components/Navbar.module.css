@@ -13,24 +13,14 @@
     height: 60px;
 }
 
-.rgNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-}
 
-.rgNav li {
-    list-style: none;
-   
-}
 
 .lfNav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 16px;
-    width: 30%;
+    width: 100%;
 }
 
 .lfNav li{

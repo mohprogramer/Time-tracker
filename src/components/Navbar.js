@@ -10,10 +10,7 @@ const Navbar = () => {
     return (
         <div className={styles.container} >
             <div className={styles.navContainer}>
-                <ul className={styles.rgNav} >
-                    <li>Hamburger</li>
-                    <li>Logo</li>           
-                </ul>
+                
                 <ul className={styles.lfNav}>
                     <li>name</li>
                     <li className={styles.img} ><img src={avatar} alt="avatar" /></li>
