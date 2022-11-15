@@ -68,5 +68,37 @@
 
 }
 
+@media (max-width:1200px) {
+    .time {
+        width: 20%;
+    }
+}
+
+@media (max-width:555px){
+    .container{
+        flex-direction: column;
+        height: auto;
+    }
+    .time{
+        width: 100%;
+        font-weight: 500;
+    }
+    .nameTask{
+        width: 100%;
+    }
+    .task {
+        margin-top: 8px;
+        font-weight: 500;
+    }
+    .name {
+        margin-top: 8px;
+        font-weight: 500;
+    }
+    .delete{
+        padding: 3px 6px;
+    }
+    
+}
+
 
 

@@ -13,7 +13,6 @@
     justify-content: space-between;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    height: 33px;
-
 } 
 
 .entryproject{
@@ -107,4 +106,52 @@
     border-bottom: 5px solid rgb(214, 214, 214);
     border-bottom-right-radius:5px ;
     border-bottom-left-radius:5px ;
+}
+
+@media (max-width:1200px){
+    .time{
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+    .entryproject input {
+        width: 70%;
+    }
+}
+
+@media (max-width:768px) {
+    .startBtn , .stopBtn {
+        padding: 8px 18px;
+    }
+    .entryTime{
+        width: 40%;
+    }
+    .entryproject{
+        width: 55%;
+    }
+    .time {
+        font-size: 1.1rem;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width:555px) {
+    .entryData{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+
+    .entryproject{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .entryTime{
+        width: 100%;
+    }
+
+    .entryproject input{
+        width: 50%;
+    }
 }
