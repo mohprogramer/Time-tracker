@@ -42,12 +42,17 @@
 .entryproject input {
     border: none;
     height: 30px;
-    width: 100%;
+    width: 90%;
     
 }
 
 .entryproject input:hover {
     border: 1px solid rgb(237, 237, 237);
+}
+
+.spanName{
+    margin-left: 10px;
+    font-weight: 600;
 }
 
 .entryTime {
@@ -61,8 +66,7 @@
     font-size: 1.6rem;
 }
 
-.buttons {
-}
+
 
 .startBtn {
     all: unset;

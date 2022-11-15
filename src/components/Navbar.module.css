@@ -5,32 +5,18 @@
 
 .navContainer{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border: 2px solid rgb(237, 237, 237);
     background-color: rgb(250, 250, 250);
     height: 60px;
-}
-
-
-
-.lfNav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-right: 16px;
-    width: 100%;
 }
 
-.lfNav li{
-    list-style: none;
-    padding-right: 16px;
-}
-
-.img img {
+.navContainer img {
     width: 50px;
 }
+
 
 
 

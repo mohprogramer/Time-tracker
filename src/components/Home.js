@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { UilPlusCircle } from '@iconscout/react-unicons'
 
 //Components
-import Modal from './Modal';
+import Modal from './Modals/Modal';
 import Projects from './Projects';
 
 //Styles
@@ -28,22 +28,27 @@ const Home = () => {
 
     const clickHandler = (event) => {
         if(event.target.name === "start"){
+            if(!name){
+                setIsOpne(true)
+            } else{
+
                 increment.current = setInterval(() => {
                     setTime((prevState) => prevState + 1)
                } , 1000)
                setRunning(false);
                console.log('start')
             
+            }
            
         } else if (event.target.name === "stop") {
+            
             setRunning(true);
             clearInterval(increment.current)
             setTime(0);
             setData([...data , {time:timeFormatting() , name:name , task:task }])   
-            setTask("") 
             
             console.log(data)
-        }
+        } 
     }
 
 
@@ -67,10 +72,13 @@ const Home = () => {
         <div className={styles.container}>
             <div className={styles.entryData} >
                 <div className={styles.entryproject}>
-                    <input value={task} placeholder="What are you working on?" onChange={event => setTask(event.target.value)} />
-                    <button onClick={() => setIsOpne(true)}>
-                        <UilPlusCircle/> <span>Project</span>
-                    </button>
+                    <input  value={task} placeholder="What are you working on?" onChange={event => setTask(event.target.value)} />
+                        {
+                            name ? <span className={styles.spanName}>{name}</span>  :
+                            <button onClick={() => setIsOpne(true)}>
+                                <UilPlusCircle/> <span>Project</span>
+                            </button>
+                        }
                 </div>
                 <div className={styles.entryTime}>
                     <div className={styles.time}>
@@ -90,7 +98,7 @@ const Home = () => {
             </div>
             <div className={data.length && styles.projectContainer}>
                 {
-                    data.map(item => <Projects key={uuidv4()} data={item}  />)
+                    data.map(item => <Projects key={uuidv4()} item={item} data={data} setData={setData}  />)
                 }
             </div>
                   

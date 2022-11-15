@@ -10,11 +10,7 @@ const Navbar = () => {
     return (
         <div className={styles.container} >
             <div className={styles.navContainer}>
-                
-                <ul className={styles.lfNav}>
-                    <li>name</li>
-                    <li className={styles.img} ><img src={avatar} alt="avatar" /></li>
-                </ul>
+                     <img src={avatar} alt="avatar" />
             </div>
         </div>
     );
